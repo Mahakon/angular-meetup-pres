@@ -1,0 +1,10 @@
+#s18 > h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+#s18 > .img-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
