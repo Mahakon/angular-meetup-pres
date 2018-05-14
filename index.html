@@ -1,120 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>DELL EMC</title>
+	<title>MEETUP</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="stylesheet" href="styles/default.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='stylesheet' type='text/css' href='styles/s12/dist/styles/default.css'>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="node_modules/shower-material/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles/default.css">
 </head>
-<body class="shower list" style="font-family: 'Roboto', sans-serif;">
+<body class="shower list">
 
-	<header class="caption" style="background: #597EB5">
-		<h1>DELL EMC Student Project</h1>
+	<header class="caption">
+		<h1>ANGULAR MEETUP</h1>
 	</header>
 
 	<section class="slide" id="s1">
-		<div style="display: flex; justify-content: flex-end">
-		<img align="baseline"
-			 src="images/dell-emc-logo-color.png"
-			 height="24"
-			 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-			 width="125" />
-		</div>
-		<h1>ServiceNow Enhancements</h1>
-		<h2>Student Project</h2>
+		<h1>Angular, Express, WebSockets ...</h1>
+		<h2>Maha</h2>
 	</section>
 
 	<section class="slide" id="s2">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>Real-time</h1>
 		</div>
-		<h2>Our Team</h2>
-		<div class="team-photo">
-			<img src="images/maha.jpg" height="280px" width="220px">
-			<img src="images/maha.jpg" height="280px" width="220px">
-			<img src="images/maha.jpg" height="280px" width="220px">
+		<div class="slide-content">
+			<ol>
+				<li>Polling
+					<ul>
+						<li>short</li>
+						<li>long</li>
+					</ul>
+				</li>
+				<li>Server-sent events</li>
+				<li>WebSockets</li>
+			</ol>
 		</div>
 	</section>
 
 	<section class="slide" id="s3">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>Polling</h1>
 		</div>
-		<h1>ServiceNow Problems</h1>
+		<div class="slide-content" style="padding: 10px">
+			<div class="img-row" style="display: flex; justify-content: flex-start">
+				<img src="images/short-polling.png" height="200px" width="300px" style="margin-right: 40px">
+				<span style="padding: 60px">Short-polling</span>
+			</div>
+			<div class="img-row" style="display: flex; justify-content: flex-end">
+				<span style="padding: 60px">Long-polling</span>
+				<img src="images/long-polling.png" height="200px" width="300px" style="margin-left: 40px">
+			</div>
+		</div>
 	</section>
 
 	<section class="slide" id="s4">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>Server Sent Events</h1>
 		</div>
-		<h2>Email Notifications Problem</h2>
-		<img src="images/cover.jpg" height="300px" width="600px" style="display: block; margin: auto">
+		<div class="slide-content" style="padding: 40px">
+			<img src="images/sse.png" height="400px" width="600px" style="display: block; margin: auto">
+		</div>
 	</section>
 
 	<section class="slide" id="s5">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>Server Sent Events</h1>
 		</div>
-		<h2>Tests Problem</h2>
-		<img src="images/cover.jpg" height="300px" width="600px" style="display: block; margin: auto">
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 40px; font-size: 30px">
+				<code><b style="color: rgba(19,85,165,0.76)">const</b>  <b style="color: rgba(135,70,165,0.76)">evtSource</b> = <b style="color: rgba(19,85,165,0.76)">new</b> <b style="color: rgba(135,70,165,0.76)">EventSource</b>(</code>
+				<code>	<b style="color: rgba(88,165,78,0.76)">"//api.example.com/connection"</b>,</code>
+				<code>	{ <b style="color: rgba(135,70,165,0.76)">withCredentials</b>: <b style="color: rgba(19,85,165,0.76)">true</b> });</code>
+			</pre>
+		</div>
 	</section>
 
 	<section class="slide" id="s6">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>WebSockets</h1>
 		</div>
-		<h2>Tests Problem</h2>
-		<img src="images/cover.jpg" height="300px" width="600px" style="display: block; margin: auto">
+		<div class="slide-content" style="padding: 20px">
+			<figure style="font-size: 26px; margin-top: 60px">
+				<blockquote>
+					<b>WebSockets</b> is a protocol that provides a bi-directional communication
+					channel. This means that a browser and web server can maintain real-time
+					comms, sending messages back and forth while the connection is open
+				</blockquote>
+			</figure>
+		</div>
 	</section>
 
 	<section class="slide" id="s7">
-		<div style="display: flex; justify-content: flex-end">
-			<img align="baseline"
-				 src="images/dell-emc-logo-color.png"
-				 height="24"
-				 style="align: baseline;
-                                    display: block;
-                                    width: 120px"
-				 width="125" />
+		<div class="slide-header">
+			<h1>WebSockets</h1>
 		</div>
-		<h2>Users and Roles Problem</h2>
-		<img src="images/cover.jpg" height="300px" width="600px" style="display: block; margin: auto">
+		<div class="slide-content" style="padding: 40px">
+			<img src="images/ws.png" height="400px" width="600px" style="display: block; margin: auto">
+		</div>
 	</section>
 
 	<section class="slide" id="s8">
@@ -305,7 +288,7 @@
 		<h1>Any questions?</h1>
 	</section>
 
-	<div class="progress" style="background: #3085BE">
+	<div class="progress">
 	</div>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>
