@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+.shower {
+    font-family: 'Slabo 27px', serif;
+    background: #FDF7E9
+}
+
+.caption,
+.progress {
+    background-color: #FFF9EF;
+    background-image: linear-gradient(
+            to top left,
+            #FFF9EF,
+            #FFD7B7,
+            #FFB3A5,
+            #FF8B9D,
+            #FF6F9C);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+
+.slide {
+    background-color: #FFF9EF;
+    padding-top: 0;
+}
+.slide::after {
+    left: 90%;
+}
+
+.slide-header > h1 {
+    font-size: 60px;
+    vertical-align: bottom;
+    line-height: 80px;
+}
+
+.slide-header {
+    border-bottom: 2px solid #FF6F9C;
+    padding: 30px 4px 4px 0;
+}
+
+.slide-content {
+    padding: 10px 46px;
+    font-size: 40px;
+}
+
+.slide > h1 {
+    margin-top: 140px;
+    text-align: center;
+    font-size: 60px;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+.slide > h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #BDC0CB;
+}
