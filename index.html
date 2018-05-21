@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MEETUP</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' type='text/css' href='styles/s12/dist/styles/default.css'>
+	<link rel="stylesheet" href="shower/themes/material/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles/default.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>ANGULAR MEETUP</h1>
+	</header>
+
+	<section class="slide" id="s1">
+		<h1>Angular, Express, WebSockets ...</h1>
+		<h2>Masha</h2>
+	</section>
+
+	<section class="slide" id="s2">
+		<div class="slide-header">
+			<h1>Real-time</h1>
+		</div>
+		<div class="slide-content">
+			<ol>
+				<li>Polling
+					<ul>
+						<li>short</li>
+						<li>long</li>
+					</ul>
+				</li>
+				<li>Server-sent events</li>
+				<li>WebSockets</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="slide" id="s3">
+		<div class="slide-header">
+			<h1>Polling</h1>
+		</div>
+		<div class="slide-content" style="padding: 10px">
+			<div class="img-row" style="display: flex; justify-content: flex-start">
+				<img src="images/short-polling.png" height="200px" width="300px" style="margin-right: 40px">
+				<span style="padding: 60px">Short-polling</span>
+			</div>
+			<div class="img-row" style="display: flex; justify-content: flex-end">
+				<span style="padding: 60px">Long-polling</span>
+				<img src="images/long-polling.png" height="200px" width="300px" style="margin-left: 40px">
+			</div>
+		</div>
+	</section>
+
+	<section class="slide" id="s4">
+		<div class="slide-header">
+			<h1>Server Sent Events</h1>
+		</div>
+		<div class="slide-content" style="padding: 40px">
+			<img src="images/sse.png" height="400px" width="600px" style="display: block; margin: auto">
+		</div>
+	</section>
+
+	<section class="slide" id="s5">
+		<div class="slide-header">
+			<h1>Server Sent Events</h1>
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code><b style="color: rgba(19,85,165,0.76)">const</b> evtSource = <b style="color: rgba(19,85,165,0.76)">new</b> <b style="color: rgba(135,70,165,0.76)">EventSource</b>(</code>
+				<code>	<b style="color: rgba(88,165,78,0.76)">"//api.example.com/connection"</b>,</code>
+				<code>	{ <b style="color: rgba(135,70,165,0.76)">withCredentials</b>: <b style="color: rgba(19,85,165,0.76)">true</b> });</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s7">
+		<div class="slide-header">
+			<h1>WebSockets</h1>
+		</div>
+		<div class="slide-content" style="padding: 40px">
+			<img src="images/ws.png" height="400px" width="600px" style="display: block; margin: auto">
+		</div>
+	</section>
+
+	<section class="slide" id="s8">
+		<div class="slide-header">
+			<h1>Chat</h1>
+		</div>
+		<div class="slide-content" style="padding: 100px 40px">
+			<a href="https://mahakon.github.io/"
+			   target="_blank"
+			   style="font-size: 66px;">
+				https://mahakon.github.io/
+			</a>
+		</div>
+	</section>
+
+	<section class="slide" id="s9">
+		<div class="slide-header">
+			<h1>Chat Technology</h1>
+		</div>
+		<div class="slide-content" style="padding: 60px 40px">
+			<div class="img-row" style="display: flex; justify-content: space-between">
+				<img src="images/nodejs.png" height="120px" width="240px">
+				<img src="images/express.png" height="120px" width="240px">
+				<img src="images/sqlite32.png" height="120px" width="120px">
+			</div>
+			<div class="img-row" style=" display: flex; justify-content: center; margin-top: 60px">
+				<img src="images/angular.png" height="120px" width="120px">
+			</div>
+		</div>
+	</section>
+
+	<section class="slide" id="s10">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px; height: 100%; overflow-y: auto">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>const url = </code>
+				<code>	'wss://your-host.com/api/connection';</code>
+				<code> </code>
+				<code>const ws = new WebSocket(url);</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s11">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px; height: 100%; overflow-y: auto">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>const observable = Observable.create(</code>
+				<code>	(obs: Observer<any>) => {</code>
+				<code>	  ws.onmessage = obs.next.bind(obs);</code>
+				<code>    ws.onerror = obs.error.bind(obs);</code>
+				<code>    ws.onclose = obs.complete.bind(obs);</code>
+				<code>    return ws.close.bind(ws);</code>
+				<code>});</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s12" style="margin-top: 0px">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px; height: 100%; overflow-y: auto">
+			<pre style="padding: 30px 40px; font-size: 30px">
+    			<code>const observer = {</code>
+      			<code>  next: (data: Object) => {</code>
+				<code>    if (ws.readyState === WebSocket.OPEN) {</code>
+          		<code>      ws.send(JSON.stringify(data));</code>
+				<code>    }</code>
+				<code>  }</code>
+				<code>};</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s13">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px; height: 100%; overflow-y: auto">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>Subject.create(observer, observable);</code>
+				<code> </code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s14">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Subscribe WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>openConnection() {</code>
+   				<code>	this.websocket =<Subject<any>>this.websocketService</code>
+      			<code>	.connect(wsHost)</code>
+				<code>	.map((response: MessageEvent): any => {</code>
+				<code>		return JSON.parse(response.data);</code>
+				<code>	});</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s15">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Subscribe WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+
+				<code>this.websocket.subscribe(</code>
+				<code>	res => {</code>
+				<code>    if (res['event'] === ChatEvents.ADD) {</code>
+				<code>    	this.eventEmitter.emit(ChatEvents.ADD,</code>
+            	<code>		  res['data']);</code>
+				<code>	  }</code>
+				<code>}),</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s16">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Subscribe WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>getSubscriptionToEvent(</code>
+				<code>	event: ChatEvents): Observable<any> {</code>
+				<code>		return fromEvent(</code>
+				<code>	          this.eventEmitter,</code>
+				<code>	          event);</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s17">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Subscribe WebSocket</h1>
+			<img style="align-self: baseline" src="images/angular.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>sendEvent(event: ChatEvents, data: object) {</code>
+    			<code>  this.websocket.next({</code>
+      			<code>    event: event,</code>
+				<code>    data: data</code>
+				<code>  });</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s18">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/nodejslogo2.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>const app = express();</code>
+				<code>const expressWs = require('express-ws')(app);</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s19">
+		<div class="slide-header" style="display: flex; justify-content: space-between">
+			<h1>Create WebSocket</h1>
+			<img style="align-self: baseline" src="images/nodejslogo2.png" height="60px" width="60px">
+		</div>
+		<div class="slide-content" style="padding: 20px">
+			<pre style="padding: 30px 40px; font-size: 30px">
+				<code>const router = express.Router();</code>
+				<code>const expressWs = require('express-ws')(router);</code>
+				<code>router.ws('/connection/:id', (ws, req) => {</code>
+				<code>  ws.on('message', (msg) => {</code>
+				<code>	}</code>
+				<code>	ws.on('close', () => {</code>
+				<code>	}</code>
+				<code>}</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide" id="s20">
+		<h1>Questions?</h1>
+	</section>
+
+	<div class="progress">
+	</div>
+
+	<script src="shower/shower.min.js"></script>
+	<script src="styles/s12/dist/scripts/bundle.js"></script>
+
+</body>
+</html>
