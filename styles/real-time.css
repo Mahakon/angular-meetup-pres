@@ -1,0 +1,68 @@
+.real-time-container > .client {
+    padding: 10px;
+    border: 2px solid #A83E36;
+    display: flex;
+    justify-content: space-between;
+}
+
+.real-time-container > .server {
+    padding: 10px;
+    border: 2px solid #98BF36;
+    display: flex;
+    justify-content: space-between;
+}
+
+.client > img,
+.server > img {
+    align-self: center;
+}
+
+.server {
+    position: relative;
+}
+
+.client > span,
+.server > span {
+    margin-right: 300px;
+    font-size: 50px;
+}
+
+.connection {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.connection > img {
+    visibility: hidden;
+    height: 30px;
+    width: 120px;
+    transition-property: visibility;
+}
+
+.real-time:hover > .slide-content >.real-time-container >.connection > img {
+    visibility: visible;
+}
+
+.time > img {
+    height: 30px;
+    width: 320px;
+}
+.time > span {
+    color: rgba(0,0,0,0.14);
+
+}
+
+.time > .right {
+    transform: rotate(180deg);
+}
+
+.connection > .bottom {
+    transform: rotate(90deg);
+}
+
+.connection > .top {
+    transform: rotate(-90deg);
+}
+
