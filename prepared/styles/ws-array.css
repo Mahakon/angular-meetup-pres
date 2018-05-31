@@ -1,0 +1,36 @@
+.ws-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-top: 160px;
+}
+
+.ws-array {
+    border: 2px solid #FFD7B7;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.ws {
+    padding: 4px;
+    border: 2px solid green;
+}
+
+.new-user {
+    position: absolute;
+    right: 2px;
+    top: 220px;
+}
+
+.event {
+    bottom: 186px;
+    left: 240px;
+    position: absolute;
+}
+
+.ws-arrow {
+    position: absolute;
+    height: 30px;
+    width: 200px;
+}

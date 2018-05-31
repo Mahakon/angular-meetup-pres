@@ -25,6 +25,7 @@
     "README.md"
   ],
   "dependencies": {
+    "enlighterjs": "^2.10.1",
     "shower-core": "^2.1.0",
     "shower-material": "^1.1.0",
     "shower-ribbon": "^2.1.0"
